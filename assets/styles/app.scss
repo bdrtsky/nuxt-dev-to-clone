@@ -1,0 +1,24 @@
+.vue-content-placeholders-img,
+.vue-content-placeholders-text__line,
+.vue-content-placeholders-heading__img,
+.vue-content-placeholders-heading__title,
+.vue-content-placeholders-heading__subtitle {
+  background: #d4e8db !important;
+}
+
+.vue-content-placeholders-is-animated
+  .vue-content-placeholders-text__line::before,
+.vue-content-placeholders-is-animated .vue-content-placeholders-img::before,
+.vue-content-placeholders-is-animated
+  .vue-content-placeholders-heading__img::before,
+.vue-content-placeholders-is-animated
+  .vue-content-placeholders-heading__title::before,
+.vue-content-placeholders-is-animated
+  .vue-content-placeholders-heading__subtitle::before {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #ccefdd 15%,
+    transparent 30%
+  ) !important;
+}

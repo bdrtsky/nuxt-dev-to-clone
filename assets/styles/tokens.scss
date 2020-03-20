@@ -1,0 +1,46 @@
+$body-font-family: 'Inter';
+$body-font-weight: 400;
+$bold-body-font-weight: 500;
+$body-font-feature-settings: 'normal';
+$display-font-family: 'Inter';
+$display-font-weight: 600;
+$display-font-feature-settings: 'normal';
+$primary-color: #41b38a;
+$primary-dark: #d4e8db;
+$surface-color: #ecf4ef;
+$on-surface-color: #000000;
+$elevated-surface-color: #ffffff;
+$on-elevated-surface-color: yellow;
+$shadow: -9px -9px 16px #f8fefa, 9px 9px 16px #cedbd7;
+$inner-shadow: inset -9px -9px 16px #f0f9f4, inset 9px 9px 16px #cedbd7;
+$small-shadow: -4px -4px 8px #f8fefa, 4px 4px 8px #cedbd7;
+$small-inner-shadow: inset -4px -4px 8px #f0f9f4, inset 4px 4px 8px #cedbd7,
+  inset -1px -1px 4px #8e8e8e;
+$screen-sm: 640px;
+$screen-md: 834px;
+$screen-lg: 1024px;
+$screen-xl: 1280px;
+$text-ssss: 0.333333rem;
+$text-sss: 0.5rem;
+$text-ss: 0.666666rem;
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.125rem;
+$text-xl: 1.25rem;
+$text-2xl: 1.5rem;
+$text-3xl: 1.875rem;
+$text-4xl: 2.25rem;
+$-ls5: 5 * -0.0125rem;
+$-ls4: 4 * -0.0125rem;
+$-ls3: 3 * -0.0125rem;
+$-ls2: 2 * -0.0125rem;
+$-ls1: -0.0125rem;
+$ls1: 0.0125rem;
+$ls2: 2 * 0.0125rem;
+$ls3: 3 * 0.0125rem;
+$ls4: 4 * 0.0125rem;
+$ls5: 5 * 0.0125rem;
+$sans-serif-fallback-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
