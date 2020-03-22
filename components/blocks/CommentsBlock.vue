@@ -8,7 +8,6 @@
         :level="0"
       />
     </ul>
-    <button v-if="comments" @click="$fetch">Refresh comments</button>
   </div>
 </template>
 
@@ -26,40 +25,16 @@ export default {
       `https://dev.to/api/comments?a_id=${this.$route.params.article}`
     )
     const parsedResponse = await response.json()
-    // console.log(parsedResponse)
-    if (parsedResponse.length) {
-      // eslint-disable-next-line
-      this.comments = parsedResponse
-    } else {
-      // eslint-disable-next-line
-      // this.$nuxt.error({ statusCode: 404, message: 'Article not found' })
-    }
+    // eslint-disable-next-line
+    this.comments = parsedResponse
   },
   fetchOnServer: false,
   data() {
     return {
-      comments: null
+      comments: []
     }
-  },
-  methods: {
-    //
   }
 }
 </script>
 
-<style lang="scss" scoped>
-button {
-  width: 100%;
-  padding: 0.5rem;
-  box-shadow: $small-shadow;
-  border-radius: 0.5rem;
-  background-color: black;
-  color: white;
-  font-weight: $display-font-weight;
-  text-transform: uppercase;
-  letter-spacing: $-ls2;
-  &:hover {
-    box-shadow: $shadow;
-  }
-}
-</style>
+<style lang="scss" scoped></style>
