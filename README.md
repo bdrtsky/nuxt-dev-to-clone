@@ -1,1 +1,3 @@
-# new-fetch-blog
+# new-fetch-example
+
+![Demo](static/intro.gif)
