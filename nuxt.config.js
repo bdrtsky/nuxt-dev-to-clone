@@ -30,7 +30,10 @@ export default {
   styleResources: {
     scss: ['~/assets/styles/tokens.scss']
   },
-  plugins: [{ src: '~/plugins/vue-placeholders' }],
+  plugins: [
+    { src: '~/plugins/vue-placeholders', mode: 'client' },
+    { src: '~/plugins/vue-observe-visibility', mode: 'client' }
+  ],
   buildModules: ['@nuxtjs/eslint-module'],
   modules: ['@nuxtjs/svg', '@nuxtjs/style-resources'],
   build: {

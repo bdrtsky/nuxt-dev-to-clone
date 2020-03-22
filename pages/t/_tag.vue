@@ -48,6 +48,10 @@
 <script>
 import ArticleCardBlock from '@/components/blocks/ArticleCardBlock'
 
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
 export default {
   components: {
     ArticleCardBlock
@@ -55,7 +59,7 @@ export default {
   async fetch() {
     const res = await fetch(
       // eslint-disable-next-line
-      `https://dev.to/api/articles?tag=nuxt&state=rising&page=${this.currentPage}`
+      `https://dev.to/api/articles?tag=${this.$route.params.tag}&top=365&page=${this.currentPage}`
     )
     const parsedResponse = await res.json()
     // eslint-disable-next-line
@@ -79,7 +83,9 @@ export default {
   },
   head() {
     return {
-      title: 'New Nuxt.js articles'
+      title:
+        this.$route.params.tag &&
+        `${capitalize(this.$route.params.tag)} articles`
     }
   }
 }
@@ -90,9 +96,7 @@ export default {
   max-width: $screen-xl;
   margin: auto;
   padding: 1rem;
-  min-height: 100vh;
 }
-
 .article-cards-wrapper {
   display: flex;
   flex-wrap: wrap;

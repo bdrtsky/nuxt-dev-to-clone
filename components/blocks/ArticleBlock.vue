@@ -14,14 +14,31 @@
       <header>
         <h1>{{ article.title }}</h1>
         <div class="tags">
-          <div v-for="tag in article.tags" :key="tag" class="tag">
+          <nuxt-link
+            v-for="tag in article.tags"
+            :key="tag"
+            :to="{ name: 't-tag', params: { tag } }"
+            class="tag"
+          >
             #{{ tag }}
-          </div>
+          </nuxt-link>
         </div>
         <div v-if="article.cover_image" class="image-wrapper">
           <img :src="article.cover_image" :alt="article.title" />
         </div>
-        <time>{{ article.readable_publish_date }}</time>
+        <div class="meta">
+          <div class="social">
+            <span>
+              <heart-icon />
+              {{ article.positive_reactions_count }}
+            </span>
+            <span>
+              <comments-icon />
+              {{ article.comments_count }}
+            </span>
+          </div>
+          <time>{{ article.readable_publish_date }}</time>
+        </div>
       </header>
       <!-- eslint-disable-next-line -->
       <div class="content" v-html="article.body_html" />
@@ -30,7 +47,14 @@
 </template>
 
 <script>
+import HeartIcon from '@/assets/icons/heart.svg?inline'
+import CommentsIcon from '@/assets/icons/comments.svg?inline'
+
 export default {
+  components: {
+    HeartIcon,
+    CommentsIcon
+  },
   props: [],
   async fetch() {
     const response = await fetch(
@@ -61,8 +85,10 @@ export default {
       this.$fetch()
     }
   },
-  methods: {
-    //
+  head() {
+    return {
+      title: this.article.title
+    }
   }
 }
 </script>
@@ -70,7 +96,6 @@ export default {
 <style lang="scss" scoped>
 article {
   padding: 2rem 2rem;
-  // background-color: var(--elevated-surface-color);
   border-radius: 1rem;
   box-shadow: $shadow;
   @media (min-width: $screen-md) {
@@ -108,7 +133,9 @@ header {
     flex-wrap: wrap;
     margin-bottom: 1rem;
     .tag {
-      padding: 0.25rem 0.5rem;
+      font-weight: $bold-body-font-weight;
+      line-height: 1;
+      padding: 0.5rem 0.5rem;
       margin: 0 0.5rem 0.5rem 0;
       border-radius: 0.25rem;
       box-shadow: $small-shadow;
@@ -117,16 +144,36 @@ header {
       }
     }
   }
-  time {
+  .meta {
     line-height: 1;
     font-size: $text-sm;
     text-transform: uppercase;
     font-weight: $bold-body-font-weight;
     letter-spacing: $-ls2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .social {
+      display: flex;
+      span {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+        svg {
+          margin-right: 0.25rem;
+        }
+      }
+    }
   }
 }
 
 ::v-deep .content {
+  .ltag__user {
+    display: none;
+  }
+  iframe {
+    max-width: 100%;
+  }
   h1 {
     font-size: $text-3xl;
     margin-top: 2rem;
@@ -161,12 +208,10 @@ header {
   img {
     width: 100%;
     border-radius: 0.75rem;
-    box-shadow: $small-shadow;
   }
   .highlight {
     margin-bottom: 1rem;
     border-radius: 0.75rem;
-    box-shadow: $small-shadow;
   }
   ul {
     list-style: numeral;

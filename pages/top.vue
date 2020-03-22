@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrapper">
-    <template v-if="$fetchState.pending">
+    <template v-if="$fetchState.pending && !articles.length">
       <div class="article-cards-wrapper">
         <content-placeholders
           v-for="p in 30"
@@ -19,11 +19,27 @@
     <template v-else>
       <div class="article-cards-wrapper">
         <article-card-block
-          v-for="article in articles"
+          v-for="(article, i) in articles"
           :key="article.id"
+          v-observe-visibility="
+            i === articles.length - 1 ? lazyLoadArticles : false
+          "
           :article="article"
           class="article-card-block"
         />
+      </div>
+    </template>
+    <template v-if="$fetchState.pending && articles.length">
+      <div class="article-cards-wrapper">
+        <content-placeholders
+          v-for="p in 30"
+          :key="p"
+          rounded
+          class="article-card-block"
+        >
+          <content-placeholders-img />
+          <content-placeholders-text :lines="3" />
+        </content-placeholders>
       </div>
     </template>
   </div>
@@ -37,13 +53,33 @@ export default {
     ArticleCardBlock
   },
   async fetch() {
-    const res = await fetch('https://dev.to/api/articles?tag=nuxt&top=365')
+    const res = await fetch(
+      // eslint-disable-next-line
+      `https://dev.to/api/articles?tag=nuxt&top=365&page=${this.currentPage}`
+    )
+    const parsedResponse = await res.json()
     // eslint-disable-next-line
-    this.articles = await res.json()
+    this.articles = [...this.articles, ...parsedResponse]
   },
   data() {
     return {
-      articles: null
+      currentPage: 1,
+      articles: []
+    }
+  },
+  methods: {
+    lazyLoadArticles(isVisible) {
+      if (isVisible) {
+        if (this.currentPage < 5) {
+          this.currentPage++
+          this.$fetch()
+        }
+      }
+    }
+  },
+  head() {
+    return {
+      title: 'Top Nuxt.js articles'
     }
   }
 }
@@ -54,6 +90,7 @@ export default {
   max-width: $screen-xl;
   margin: auto;
   padding: 1rem;
+  min-height: 100vh;
 }
 .article-cards-wrapper {
   display: flex;
@@ -65,7 +102,7 @@ export default {
     @media (min-width: $screen-sm) {
       width: calc(50% - 2 * 1rem);
     }
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-lg) {
       width: calc(33.33333% - 2 * 1rem);
     }
   }

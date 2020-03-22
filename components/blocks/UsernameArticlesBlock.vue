@@ -43,8 +43,6 @@ export default {
     )
     // eslint-disable-next-line
     this.articles = await res.json()
-    // eslint-disable-next-line
-    console.log(this.articles)
   },
   data() {
     return {

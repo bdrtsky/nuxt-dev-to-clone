@@ -1,6 +1,5 @@
 <template>
   <div>
-    <button @click="$fetch">Update comments</button>
     <ul>
       <comment-block
         v-for="comment in comments"
@@ -9,6 +8,7 @@
         :level="0"
       />
     </ul>
+    <button v-if="comments" @click="$fetch">Refresh comments</button>
   </div>
 </template>
 
@@ -53,7 +53,8 @@ button {
   padding: 0.5rem;
   box-shadow: $small-shadow;
   border-radius: 0.5rem;
-  background-color: $primary-color;
+  background-color: black;
+  color: white;
   font-weight: $display-font-weight;
   text-transform: uppercase;
   letter-spacing: $-ls2;

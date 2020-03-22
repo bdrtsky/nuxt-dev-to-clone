@@ -104,6 +104,7 @@ export default {
         margin-left: 0;
         font-size: $text-lg;
         font-weight: $bold-body-font-weight;
+        line-height: 1;
         img {
           width: 2.5rem;
           height: 2.5rem;

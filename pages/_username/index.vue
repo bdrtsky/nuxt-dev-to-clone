@@ -13,15 +13,6 @@ export default {
   components: {
     UsernameBlock,
     UsernameArticlesBlock
-  },
-  props: [],
-  data() {
-    return {
-      //
-    }
-  },
-  methods: {
-    //
   }
 }
 </script>

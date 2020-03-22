@@ -20,15 +20,6 @@ export default {
     ArticleBlock,
     CommentsBlock,
     AsideUsernameBlock
-  },
-  props: [],
-  data() {
-    return {
-      //
-    }
-  },
-  methods: {
-    //
   }
 }
 </script>

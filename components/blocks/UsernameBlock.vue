@@ -26,7 +26,12 @@
       </div>
       <div class="content">
         <h1>{{ user.name }}</h1>
-        <a :href="`https://dev.to/${user.username}`" class="follow-button">
+        <a
+          :href="`https://dev.to/${user.username}`"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          class="follow-button"
+        >
           Follow
         </a>
         <div v-if="user.summary" class="summary">{{ user.summary }}</div>
@@ -93,11 +98,13 @@ export default {
   },
   data() {
     return {
-      user: null
+      user: {}
     }
   },
-  methods: {
-    //
+  head() {
+    return {
+      title: this.user.name
+    }
   }
 }
 </script>
@@ -169,12 +176,14 @@ section {
       font-size: $text-4xl;
       letter-spacing: $-ls2;
       margin-bottom: 1rem;
+      line-height: 1;
     }
     .follow-button {
       display: block;
       width: 100%;
       padding: 0.5rem;
-      background-color: $primary-color;
+      background-color: black;
+      color: white;
       border-radius: 0.5rem;
       box-shadow: $small-shadow;
       text-transform: uppercase;

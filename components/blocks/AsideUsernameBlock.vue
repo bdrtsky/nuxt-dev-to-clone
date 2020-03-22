@@ -51,7 +51,7 @@
         }"
         class="follow-button"
       >
-        Follow
+        See profile
       </nuxt-link>
       <div class="info">
         <div v-if="user.summary">
@@ -129,7 +129,8 @@ aside {
     display: block;
     width: 100%;
     padding: 0.5rem;
-    background-color: $primary-color;
+    background-color: black;
+    color: white;
     border-radius: 0.5rem;
     box-shadow: $small-shadow;
     text-transform: uppercase;
