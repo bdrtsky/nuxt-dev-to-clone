@@ -32,7 +32,7 @@
               <heart-icon />
               {{ article.positive_reactions_count }}
             </span>
-            <span>
+            <span class="comments" @click="scrollToComments">
               <comments-icon />
               {{ article.comments_count }}
             </span>
@@ -69,6 +69,8 @@ export default {
     ) {
       // eslint-disable-next-line
       this.article = parsedResponse
+      // eslint-disable-next-line
+      this.$store.commit('SET_CURRENT_ARTICLE', this.article)
     } else {
       // eslint-disable-next-line
       this.$nuxt.error({ statusCode: 404, message: 'Article not found' })
@@ -83,6 +85,15 @@ export default {
     // Call fetch again if last fetch more than 10 sec ago
     if (this.$fetchState.timestamp <= Date.now() - 10000) {
       this.$fetch()
+    }
+  },
+  methods: {
+    scrollToComments() {
+      const el = document.querySelector('#comments')
+      if (el) {
+        const scrollTo = el.getBoundingClientRect().top
+        window.scrollBy({ top: scrollTo - 20, left: 0, behavior: 'smooth' })
+      }
     }
   },
   head() {
@@ -162,6 +173,9 @@ header {
         svg {
           margin-right: 0.25rem;
         }
+      }
+      .comments {
+        cursor: pointer;
       }
     }
   }

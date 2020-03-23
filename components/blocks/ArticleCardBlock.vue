@@ -82,6 +82,9 @@ article {
   overflow: hidden;
   box-shadow: $shadow;
   cursor: pointer;
+  &:hover {
+    box-shadow: $small-shadow;
+  }
   .image-wrapper {
     position: relative;
     padding-bottom: 56.25%;
