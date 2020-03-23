@@ -10,7 +10,8 @@
     </ul>
     <a
       :href="
-        `https://dev.to/${$route.params.username}/${$store.state.currentArticle.slug}`
+        `https://dev.to/${$route.params.username}/${$store.state
+          .currentArticle && $store.state.currentArticle.slug}`
       "
       target="_blank"
       rel="nofollow noopener noreferer"

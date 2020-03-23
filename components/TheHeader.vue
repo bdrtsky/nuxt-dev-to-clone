@@ -47,8 +47,8 @@ export default {
 header {
   max-width: $screen-xl;
   margin: auto;
-  margin-top: 1rem;
   padding: 1rem;
+  padding-top: 2rem;
   height: 4rem;
   display: flex;
   align-items: center;

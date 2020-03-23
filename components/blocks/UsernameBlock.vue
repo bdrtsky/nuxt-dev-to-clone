@@ -93,6 +93,10 @@ export default {
       `https://dev.to/api/users/by_username?url=${this.$route.params.username}`
     )
     const parsedResponse = await response.json()
+    if (parsedResponse.status === 404) {
+      // eslint-disable-next-line
+      this.$nuxt.error({ statusCode: 404, message: 'User not found' })
+    }
     // eslint-disable-next-line
     this.user = parsedResponse
   },
