@@ -85,7 +85,7 @@ article {
   .image-wrapper {
     position: relative;
     padding-bottom: 56.25%;
-    background-color: $primary-dark;
+    background-color: $elevated-surface-color;
     img {
       position: absolute;
       top: 0;
@@ -114,6 +114,10 @@ article {
         border-radius: 0.25rem;
         box-shadow: $small-shadow;
         &:hover {
+          background: $hovered-surface-color;
+        }
+        &:active {
+          background: transparent;
           box-shadow: $small-inner-shadow;
         }
       }

@@ -1,7 +1,7 @@
 <template>
   <aside>
     <template v-if="$fetchState.pending">
-      <div class="username loading">
+      <div class="username-heading loading">
         <content-placeholders>
           <content-placeholders-heading :img="true" />
         </content-placeholders>
@@ -16,7 +16,7 @@
       <p>Error while fetching user: {{ error }}</p>
     </template>
     <template v-else>
-      <div class="username">
+      <div class="username-heading">
         <nuxt-link
           :to="{
             name: 'username',
@@ -25,7 +25,7 @@
         >
           <img :src="user.profile_image" :alt="user.name" />
         </nuxt-link>
-        <div class="name">
+        <div class="text">
           <nuxt-link
             :to="{
               name: 'username',
@@ -98,9 +98,9 @@ export default {
 <style lang="scss" scoped>
 aside {
   padding: 1rem;
-  box-shadow: $shadow;
+  background-color: $elevated-surface-color;
   border-radius: 1rem;
-  .username {
+  .username-heading {
     display: flex;
     margin-bottom: 1rem;
     img {
@@ -109,7 +109,7 @@ aside {
       border-radius: 50%;
       margin-right: 1rem;
     }
-    .name {
+    .text {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -119,6 +119,12 @@ aside {
       a:first-child {
         font-size: $text-xl;
         font-weight: $bold-body-font-weight;
+        margin-bottom: 0.25rem;
+      }
+      a:last-child {
+        color: $gray-color;
+        font-size: $text-sm;
+        // font-weight: $bold-body-font-weight;
       }
     }
     &.loading {
@@ -129,8 +135,6 @@ aside {
     display: block;
     width: 100%;
     padding: 0.5rem;
-    background-color: black;
-    color: white;
     border-radius: 0.5rem;
     box-shadow: $small-shadow;
     text-transform: uppercase;
@@ -138,20 +142,29 @@ aside {
     font-weight: $display-font-weight;
     letter-spacing: $-ls2;
     margin-bottom: 1rem;
+    &:hover {
+      background: $hovered-surface-color;
+    }
+    &:active {
+      background: transparent;
+      box-shadow: $small-inner-shadow;
+    }
   }
   .info {
     > div {
       margin-bottom: 0.5rem;
     }
     .title {
-      font-size: $text-sm;
-      letter-spacing: $-ls2;
+      font-size: $text-ss;
+      letter-spacing: $-ls1;
       font-weight: $bold-body-font-weight;
-      opacity: 0.5;
+      color: $gray-color;
       text-transform: uppercase;
+      margin-bottom: 0.1rem;
     }
     .content {
       font-size: $text-sm;
+      line-height: 1.4;
     }
   }
 }

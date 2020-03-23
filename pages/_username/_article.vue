@@ -37,12 +37,12 @@ export default {
   max-width: 880px;
   margin: auto;
   @media (min-width: $screen-xl) {
+    margin-right: 1rem;
     width: 66.66666%;
   }
   .article-block {
     margin-bottom: 2rem;
     @media (min-width: $screen-xl) {
-      margin: 0.5rem;
       margin-bottom: 2rem;
     }
   }

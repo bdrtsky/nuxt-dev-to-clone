@@ -115,7 +115,7 @@ section {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  box-shadow: $shadow;
+  background-color: $elevated-surface-color;
   border-radius: 1rem;
   padding: 2rem;
   .image-wrapper {
@@ -182,8 +182,6 @@ section {
       display: block;
       width: 100%;
       padding: 0.5rem;
-      background-color: black;
-      color: white;
       border-radius: 0.5rem;
       box-shadow: $small-shadow;
       text-transform: uppercase;
@@ -191,14 +189,28 @@ section {
       font-weight: $display-font-weight;
       letter-spacing: $-ls2;
       margin-bottom: 1rem;
+      &:hover {
+        background: $hovered-surface-color;
+      }
+      &:active {
+        background: transparent;
+        box-shadow: $small-inner-shadow;
+      }
     }
     .summary {
       margin-bottom: 1rem;
+      line-height: 1.4;
     }
     .links {
       display: flex;
       a {
         margin: 0 0.5rem;
+        &:hover {
+          color: $primary-color;
+          svg {
+            color: $primary-color;
+          }
+        }
       }
     }
   }
@@ -211,14 +223,16 @@ section {
       margin-bottom: 0.5rem;
     }
     .title {
-      font-size: $text-sm;
-      letter-spacing: $-ls2;
+      font-size: $text-ss;
+      letter-spacing: $-ls1;
       font-weight: $bold-body-font-weight;
-      opacity: 0.5;
+      color: $gray-color;
       text-transform: uppercase;
+      margin-bottom: 0.1rem;
     }
     .content {
       font-size: $text-sm;
+      line-height: 1.25;
     }
   }
 }

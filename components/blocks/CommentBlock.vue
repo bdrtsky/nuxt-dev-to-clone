@@ -87,7 +87,7 @@ export default {
 <style lang="scss" scoped>
 .comment {
   .card {
-    box-shadow: $small-shadow;
+    background-color: white;
     border-radius: 0.5rem;
     margin: 1rem 0;
     padding: 1rem;
@@ -97,6 +97,12 @@ export default {
       margin-bottom: 1rem;
       a {
         margin: 0 0.5rem;
+        &:hover {
+          color: $primary-color;
+          svg {
+            color: $primary-color;
+          }
+        }
       }
       .inner-link {
         display: flex;
@@ -146,7 +152,9 @@ export default {
     color: $primary-color;
   }
   p {
+    font-size: $text-sm;
     margin-bottom: 1rem;
+    line-height: 1.4;
     code {
       background-color: #d2f3e1;
       border-radius: 0.25rem;
@@ -155,13 +163,11 @@ export default {
   }
   img {
     width: 100%;
-    border-radius: 0.75rem;
-    box-shadow: $small-shadow;
+    border-radius: 0.5rem;
   }
   .highlight {
     margin-bottom: 1rem;
-    border-radius: 0.75rem;
-    box-shadow: $small-shadow;
+    border-radius: 0.5rem;
   }
   ul {
     list-style: numeral;

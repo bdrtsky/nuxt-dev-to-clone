@@ -48,13 +48,13 @@ header {
   max-width: $screen-xl;
   margin: auto;
   margin-top: 1rem;
-  padding: 1rem 2rem;
+  padding: 1rem;
   height: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   .logo-wrapper {
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     svg {
       width: 3rem;
       height: 100%;
@@ -73,7 +73,17 @@ header {
           box-shadow: $small-shadow;
           padding: 0.25rem 1rem;
           border-radius: 0.5rem;
+          user-select: none;
+          &:hover {
+            background: $hovered-surface-color;
+          }
           &.nuxt-link-exact-active {
+            cursor: default;
+            background: transparent;
+            box-shadow: $small-inner-shadow;
+          }
+          &:active {
+            background: transparent;
             box-shadow: $small-inner-shadow;
           }
         }

@@ -7,10 +7,16 @@ $display-font-weight: 600;
 $display-font-feature-settings: 'normal';
 $primary-color: #41b38a;
 $primary-dark: #d4e8db;
-$surface-color: #ecf4ef;
+$surface-color: #eff7f3;
 $on-surface-color: #000000;
-$elevated-surface-color: #ffffff;
+$hovered-surface-color: linear-gradient(
+  135deg,
+  rgba(0, 0, 0, 0.09),
+  rgba(255, 255, 255, 0)
+);
+$elevated-surface-color: #dfefe8;
 $on-elevated-surface-color: yellow;
+$gray-color: #999999;
 $shadow: -9px -9px 16px #f8fefa, 9px 9px 16px #cedbd7;
 $inner-shadow: inset -9px -9px 16px #f0f9f4, inset 9px 9px 16px #cedbd7;
 $small-shadow: -4px -4px 8px #f8fefa, 4px 4px 8px #cedbd7;

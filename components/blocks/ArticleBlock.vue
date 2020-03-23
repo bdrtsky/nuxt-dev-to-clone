@@ -95,12 +95,8 @@ export default {
 
 <style lang="scss" scoped>
 article {
-  padding: 2rem 2rem;
+  padding: 0.5rem;
   border-radius: 1rem;
-  box-shadow: $shadow;
-  @media (min-width: $screen-md) {
-    padding: 2rem 3rem;
-  }
 }
 
 header {
@@ -109,14 +105,34 @@ header {
     font-size: $text-4xl;
     margin-bottom: 1rem;
   }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    .tag {
+      font-weight: $bold-body-font-weight;
+      line-height: 1;
+      padding: 0.5rem 0.5rem;
+      margin: 0 0.5rem 0.5rem 0;
+      border-radius: 0.25rem;
+      box-shadow: $small-shadow;
+      &:hover {
+        background: $hovered-surface-color;
+      }
+      &:active {
+        background: transparent;
+        box-shadow: $small-inner-shadow;
+      }
+    }
+  }
   .image-wrapper {
     position: relative;
     padding-bottom: 56.25%;
     background-color: $primary-dark;
-    margin: 0 -2rem;
     margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
     @media (min-width: $screen-md) {
-      margin: 0 -3rem;
       margin-bottom: 1.5rem;
     }
     img {
@@ -126,22 +142,6 @@ header {
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-  }
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-    .tag {
-      font-weight: $bold-body-font-weight;
-      line-height: 1;
-      padding: 0.5rem 0.5rem;
-      margin: 0 0.5rem 0.5rem 0;
-      border-radius: 0.25rem;
-      box-shadow: $small-shadow;
-      &:hover {
-        box-shadow: $small-inner-shadow;
-      }
     }
   }
   .meta {
@@ -199,6 +199,7 @@ header {
   }
   p {
     margin-bottom: 1rem;
+    line-height: 1.4;
     code {
       background-color: #d2f3e1;
       border-radius: 0.25rem;
@@ -207,11 +208,11 @@ header {
   }
   img {
     width: 100%;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
   }
   .highlight {
     margin-bottom: 1rem;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
   }
   ul {
     list-style: numeral;
