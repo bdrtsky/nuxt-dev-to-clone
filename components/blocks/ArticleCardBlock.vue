@@ -34,7 +34,7 @@
         </nuxt-link>
       </div>
       <div class="meta">
-        <div class="social">
+        <div class="scl">
           <span>
             <heart-icon />
             {{ article.positive_reactions_count }}
@@ -84,6 +84,9 @@ article {
   cursor: pointer;
   &:hover {
     box-shadow: $small-shadow;
+    h1 {
+      color: $primary-color;
+    }
   }
   .image-wrapper {
     position: relative;
@@ -131,7 +134,7 @@ article {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      .social {
+      .scl {
         display: flex;
         span {
           display: flex;

@@ -27,7 +27,7 @@
           <img :src="article.cover_image" :alt="article.title" />
         </div>
         <div class="meta">
-          <div class="social">
+          <div class="scl">
             <span>
               <heart-icon />
               {{ article.positive_reactions_count }}
@@ -164,7 +164,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .social {
+    .scl {
       display: flex;
       span {
         display: flex;

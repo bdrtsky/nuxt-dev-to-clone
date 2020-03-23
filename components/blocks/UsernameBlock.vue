@@ -30,7 +30,7 @@
           :href="`https://dev.to/${user.username}`"
           target="_blank"
           rel="nofollow noopener noreferrer"
-          class="follow-button"
+          class="f-button"
         >
           Follow
         </a>
@@ -182,7 +182,7 @@ section {
       margin-bottom: 1rem;
       line-height: 1;
     }
-    .follow-button {
+    .f-button {
       display: block;
       width: 100%;
       padding: 0.5rem;

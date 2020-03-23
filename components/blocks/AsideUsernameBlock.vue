@@ -16,7 +16,14 @@
       <p>Error while fetching user: {{ error }}</p>
     </template>
     <template v-else>
-      <div class="username-heading">
+      <nuxt-link
+        class="username-heading"
+        :to="{
+          name: 'username',
+          params: { username: user.username }
+        }"
+        tag="div"
+      >
         <nuxt-link
           :to="{
             name: 'username',
@@ -43,13 +50,13 @@
             <span>@{{ user.username }}</span>
           </nuxt-link>
         </div>
-      </div>
+      </nuxt-link>
       <nuxt-link
         :to="{
           name: 'username',
           params: { username: user.username }
         }"
-        class="follow-button"
+        class="f-button"
       >
         See profile
       </nuxt-link>
@@ -103,6 +110,9 @@ aside {
   .username-heading {
     display: flex;
     margin-bottom: 1rem;
+    &:hover {
+      color: $primary-color;
+    }
     img {
       width: 3rem;
       height: 3rem;
@@ -131,7 +141,7 @@ aside {
       display: block;
     }
   }
-  .follow-button {
+  .f-button {
     display: block;
     width: 100%;
     padding: 0.5rem;
