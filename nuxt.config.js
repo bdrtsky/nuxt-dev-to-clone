@@ -35,7 +35,17 @@ export default {
     { src: '~/plugins/vue-observe-visibility', mode: 'client' }
   ],
   buildModules: ['@nuxtjs/eslint-module'],
-  modules: ['@nuxtjs/svg', '@nuxtjs/style-resources'],
+  modules: [
+    '@nuxtjs/svg',
+    '@nuxtjs/style-resources',
+    [
+      'nuxt-ackee',
+      {
+        server: 'https://nuxt-ackee.herokuapp.com',
+        domainId: 'f7ace8af-fb9d-4c87-b00e-0f400f8b87b8'
+      }
+    ]
+  ],
   build: {
     extend(config, ctx) {}
   }

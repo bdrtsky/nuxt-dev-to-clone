@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "nuxt": "^2.0.0",
+    "nuxt-ackee": "git+ssh://git@github.com/bdrtsky/nuxt-ackee.git",
     "vue-content-placeholders": "^0.2.1",
     "vue-observe-visibility": "^0.4.6"
   },
