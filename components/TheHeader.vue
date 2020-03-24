@@ -48,8 +48,7 @@ header {
   max-width: $screen-xl;
   margin: auto;
   padding: 1rem;
-  padding-top: 2rem;
-  height: 4rem;
+  height: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

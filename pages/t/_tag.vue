@@ -104,6 +104,8 @@ export default {
   .article-card-block {
     width: calc(100% - 2 * 1rem);
     margin: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
     @media (min-width: $screen-sm) {
       width: calc(50% - 2 * 1rem);
     }

@@ -122,6 +122,7 @@ section {
   background-color: $elevated-surface-color;
   border-radius: 1rem;
   padding: 2rem;
+  margin: 0.5rem;
   .image-wrapper {
     width: 50%;
     padding-bottom: 50%;
