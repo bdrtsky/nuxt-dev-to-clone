@@ -13,8 +13,7 @@ import TheFooter from '@/components/TheFooter'
 export default {
   components: {
     TheHeader,
-    TheFooter,
-    TheFork
+    TheFooter
   }
 }
 </script>
