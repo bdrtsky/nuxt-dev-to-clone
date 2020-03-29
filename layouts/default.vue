@@ -1,7 +1,6 @@
 <template>
   <div>
     <the-header />
-    <the-fork />
     <nuxt keep-alive />
     <the-footer />
   </div>
@@ -10,7 +9,6 @@
 <script>
 import TheHeader from '@/components/TheHeader'
 import TheFooter from '@/components/TheFooter'
-import TheFork from '@/components/TheFork'
 
 export default {
   components: {
