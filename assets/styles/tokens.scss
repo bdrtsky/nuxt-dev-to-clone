@@ -5,22 +5,22 @@ $body-font-feature-settings: 'normal';
 $display-font-family: 'Inter';
 $display-font-weight: 600;
 $display-font-feature-settings: 'normal';
-$primary-color: #41b38a;
-$primary-dark: #d4e8db;
-$surface-color: #eff7f3;
+$primary-color: #243746;
+$primary-dark: #d4dfe8;
+$surface-color: #eff4f7;
 $on-surface-color: #000000;
 $hovered-surface-color: linear-gradient(
   135deg,
   rgba(0, 0, 0, 0.09),
   rgba(255, 255, 255, 0)
 );
-$elevated-surface-color: #dfefe8;
+$elevated-surface-color: #dfe8ef;
 $on-elevated-surface-color: yellow;
 $gray-color: #999999;
-$shadow: -9px -9px 16px #f8fefa, 9px 9px 16px #cedbd7;
-$inner-shadow: inset -9px -9px 16px #f0f9f4, inset 9px 9px 16px #cedbd7;
-$small-shadow: -4px -4px 8px #f8fefa, 4px 4px 8px #cedbd7;
-$small-inner-shadow: inset -4px -4px 8px #f0f9f4, inset 4px 4px 8px #cedbd7,
+$shadow: -9px -9px 16px #f8fafe, 9px 9px 16px #ced2db;
+$inner-shadow: inset -9px -9px 16px #f0f3f9, inset 9px 9px 16px #ced2db;
+$small-shadow: -4px -4px 8px #f8fafe, 4px 4px 8px #ced2db;
+$small-inner-shadow: inset -4px -4px 8px #f0f3f9, inset 4px 4px 8px #ced2db,
   inset -1px -1px 4px #8e8e8e;
 $screen-sm: 640px;
 $screen-md: 834px;
