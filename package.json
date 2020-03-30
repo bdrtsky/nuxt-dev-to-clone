@@ -1,7 +1,7 @@
 {
-  "name": "new-fetch-blog",
+  "name": "dev-to-clone-nuxt",
   "version": "1.0.0",
-  "description": "My kryptonian Nuxt.js project",
+  "description": "Dev.to clone with NuxtJS",
   "author": "Sergey Bedritsky",
   "private": true,
   "scripts": {
