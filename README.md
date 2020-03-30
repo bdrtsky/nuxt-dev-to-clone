@@ -1,6 +1,6 @@
 # Dev.to clone built with NuxtJS
 
-> An articles aggregation app using [DEV.TO](https://dev.to) public API, demonstrating capabilities of [NuxtJS](https://nuxtjs.org) new fetch() 
+> An articles aggregation app using [DEV.TO](https://dev.to) public [API](https://docs.dev.to/api/), demonstrating capabilities of [NuxtJS](https://nuxtjs.org) new [fetch()](https://nuxtjs.org/api/pages-fetch)
 
 See [live mode](https://xr8nr.sse.codesandbox.io).
 
