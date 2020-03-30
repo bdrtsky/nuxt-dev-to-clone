@@ -31,6 +31,7 @@
   top: 0;
   border: 0;
   right: 0;
+  z-index: 999;
   clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
 
