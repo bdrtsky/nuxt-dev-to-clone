@@ -31,6 +31,7 @@
   top: 0;
   border: 0;
   right: 0;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
 
 .github-corner:hover .octo-arm {
