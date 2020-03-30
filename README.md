@@ -4,8 +4,8 @@
 
 See [live mode](https://xr8nr.sse.codesandbox.io).
 
-[![Edit dev-to-clone-nuxt](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/bdrtsky/new-fetch-example/tree/master/?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit dev-to-clone-nuxt](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/bdrtsky/nuxt-dev-to-clone/tree/master/?fontsize=14&hidenavigation=1&theme=dark)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/bdrtsky/new-fetch-example/master/static/demo.gif">
+  <img src="https://raw.githubusercontent.com/bdrtsky/nuxt-dev-to-clone/master/static/demo.gif">
 </p>

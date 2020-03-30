@@ -1,6 +1,6 @@
 <template>
   <a
-    href="https://github.com/bdrtsky/new-fetch-example"
+    href="https://github.com/bdrtsky/nuxt-dev-to-clone"
     target="_blank"
     rel="noreferer noopener nofollow"
     class="github-corner"
