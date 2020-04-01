@@ -41,8 +41,8 @@ export default {
     [
       'nuxt-ackee',
       {
-        server: 'https://nuxt-ackee.herokuapp.com',
-        domainId: 'f7ace8af-fb9d-4c87-b00e-0f400f8b87b8'
+        server: 'https://ackee.nuxtjs.com',
+        domainId: '232cc68c-3066-4703-a1b7-4556135ec989'
       }
     ]
   ],

@@ -60,7 +60,6 @@ header {
     }
   }
   nav {
-    // font-size: $text-xl;
     letter-spacing: $-ls2;
     font-weight: $display-font-weight;
     text-transform: uppercase;
