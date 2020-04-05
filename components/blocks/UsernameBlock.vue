@@ -7,12 +7,12 @@
         </content-placeholders>
       </div>
       <div class="content">
-        <content-placeholders>
+        <content-placeholders rounded>
           <content-placeholders-text :lines="3" />
         </content-placeholders>
       </div>
       <div class="info">
-        <content-placeholders>
+        <content-placeholders rounded>
           <content-placeholders-text :lines="3" />
         </content-placeholders>
       </div>

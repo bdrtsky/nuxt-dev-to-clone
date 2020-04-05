@@ -95,9 +95,6 @@ export default {
     return {
       user: {}
     }
-  },
-  methods: {
-    //
   }
 }
 </script>

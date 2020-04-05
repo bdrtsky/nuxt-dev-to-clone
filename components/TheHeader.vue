@@ -22,7 +22,6 @@ export default {
   components: {
     NuxtIcon
   },
-  props: [],
   data() {
     return {
       links: [
@@ -36,9 +35,6 @@ export default {
         }
       ]
     }
-  },
-  methods: {
-    //
   }
 }
 </script>

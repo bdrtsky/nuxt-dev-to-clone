@@ -72,14 +72,6 @@ export default {
       type: Number,
       default: null
     }
-  },
-  data() {
-    return {
-      //
-    }
-  },
-  methods: {
-    //
   }
 }
 </script>

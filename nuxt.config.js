@@ -31,8 +31,8 @@ export default {
     scss: ['~/assets/styles/tokens.scss']
   },
   plugins: [
-    { src: '~/plugins/vue-placeholders', mode: 'client' },
-    { src: '~/plugins/vue-observe-visibility', mode: 'client' }
+    { src: '~/plugins/vue-placeholders.client.js' },
+    { src: '~/plugins/vue-observe-visibility.client.js' }
   ],
   buildModules: ['@nuxtjs/eslint-module'],
   modules: [

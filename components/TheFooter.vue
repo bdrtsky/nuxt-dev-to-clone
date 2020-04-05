@@ -19,15 +19,6 @@ export default {
   components: {
     DevToIcon,
     NuxtIcon
-  },
-  props: [],
-  data() {
-    return {
-      //
-    }
-  },
-  methods: {
-    //
   }
 }
 </script>

@@ -64,14 +64,6 @@ export default {
       type: Object,
       default: null
     }
-  },
-  data() {
-    return {
-      //
-    }
-  },
-  methods: {
-    //
   }
 }
 </script>
