@@ -112,6 +112,7 @@ header {
   margin-bottom: 1rem;
   h1 {
     font-size: $text-4xl;
+    letter-spacing: $-ls2;
     margin-bottom: 1rem;
   }
   .tags {
@@ -190,21 +191,25 @@ header {
     font-size: $text-3xl;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    letter-spacing: $-ls2;
   }
   h2 {
     font-size: $text-2xl;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    letter-spacing: $-ls2;
   }
   h3 {
     font-size: $text-xl;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    letter-spacing: $-ls2;
   }
   h4 {
     font-size: $text-base;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    letter-spacing: $-ls2;
   }
   a {
     color: $primary-color;

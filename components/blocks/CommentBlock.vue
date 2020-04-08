@@ -89,6 +89,7 @@ export default {
       margin-bottom: 1rem;
       a {
         margin: 0 0.5rem;
+        letter-spacing: $-ls2;
         &:hover {
           color: $primary-color;
           svg {

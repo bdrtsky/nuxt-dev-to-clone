@@ -132,6 +132,7 @@ aside {
       a:first-child {
         font-size: $text-xl;
         font-weight: $bold-body-font-weight;
+        letter-spacing: $-ls2;
         margin-bottom: 0.25rem;
       }
       a:last-child {

@@ -97,6 +97,7 @@ article {
     padding: 1rem;
     h1 {
       font-size: $text-xl;
+      letter-spacing: $-ls2;
       margin-bottom: 1rem;
     }
     .tags {
