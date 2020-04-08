@@ -65,6 +65,10 @@ export default {
       this.article = article
       this.$store.commit('SET_CURRENT_ARTICLE', this.article)
     } else {
+      // set status code on server
+      if (process.server) {
+        this.$nuxt.context.res.statusCode = 404
+      }
       throw new Error('Article not found')
     }
   },

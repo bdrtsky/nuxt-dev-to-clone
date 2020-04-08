@@ -14,7 +14,7 @@
       </div>
     </template>
     <template v-else-if="$fetchState.error">
-      <p>Error while fetching posts: {{ $fetchState.error.message }}</p>
+      <p>{{ $fetchState.error.message }}</p>
     </template>
     <template v-else>
       <div class="article-cards-wrapper">
@@ -60,6 +60,14 @@ export default {
     const articles = await fetch(
       `https://dev.to/api/articles?tag=${this.$route.params.tag}&top=365&page=${this.currentPage}`
     ).then((res) => res.json())
+
+    if (!articles.length && this.currentPage === 1) {
+      // set status code on server
+      if (process.server) {
+        this.$nuxt.context.res.statusCode = 404
+      }
+      throw new Error(`Tag ${this.$route.params.tag} not found`)
+    }
 
     this.articles = this.articles.concat(articles)
   },

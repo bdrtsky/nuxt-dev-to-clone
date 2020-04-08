@@ -93,6 +93,10 @@ export default {
     )
 
     if (!res.ok) {
+      // set status code on server
+      if (process.server) {
+        this.$nuxt.context.res.statusCode = 404
+      }
       throw new Error('User not found')
     }
     this.user = await res.json()
