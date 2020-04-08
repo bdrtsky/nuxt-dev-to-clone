@@ -18,7 +18,7 @@
       </div>
     </template>
     <template v-else-if="$fetchState.error">
-      <p>Error while fetching user: {{ error }}</p>
+      <p>Error while fetching user: {{ $fetchState.error.message }}</p>
     </template>
     <template v-else>
       <div class="image-wrapper">
@@ -88,17 +88,14 @@ export default {
   },
   props: [],
   async fetch() {
-    const response = await fetch(
-      // eslint-disable-next-line
+    const res = await fetch(
       `https://dev.to/api/users/by_username?url=${this.$route.params.username}`
     )
-    const parsedResponse = await response.json()
-    if (parsedResponse.status === 404) {
-      // eslint-disable-next-line
-      this.$nuxt.error({ statusCode: 404, message: 'User not found' })
+
+    if (!res.ok) {
+      throw new Error('User not found')
     }
-    // eslint-disable-next-line
-    this.user = parsedResponse
+    this.user = await res.json()
   },
   data() {
     return {

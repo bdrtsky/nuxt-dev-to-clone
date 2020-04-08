@@ -1,14 +1,14 @@
 export default {
   mode: 'universal',
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Dev.to clone with NuxtJS',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: 'Building a dev.to clone with Nuxt.js and new fetch() hook'
       }
     ],
     link: [
@@ -20,7 +20,7 @@ export default {
       }
     ]
   },
-  loading: { color: '#fff' },
+  loading: false, // disable loading bar
   css: [
     '~/assets/styles/reset.scss',
     '~/assets/styles/base.scss',
@@ -39,16 +39,9 @@ export default {
     '@nuxtjs/svg',
     '@nuxtjs/style-resources'
   ],
-  modules: [
-    [
-      'nuxt-ackee',
-      {
-        server: 'https://ackee.nuxtjs.com',
-        domainId: '232cc68c-3066-4703-a1b7-4556135ec989'
-      }
-    ]
-  ],
-  build: {
-    extend(config, ctx) {}
+  modules: ['nuxt-ackee'],
+  ackee: {
+    server: 'https://ackee.nuxtjs.com',
+    domainId: '232cc68c-3066-4703-a1b7-4556135ec989'
   }
 }

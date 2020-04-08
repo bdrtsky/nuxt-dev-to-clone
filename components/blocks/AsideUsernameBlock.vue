@@ -13,7 +13,7 @@
       </div>
     </template>
     <template v-else-if="$fetchState.error">
-      <p>Error while fetching user: {{ error }}</p>
+      <p>{{ $fetchState.error.message }}</p>
     </template>
     <template v-else>
       <nuxt-link
@@ -82,13 +82,14 @@
 export default {
   props: [],
   async fetch() {
-    const response = await fetch(
-      // eslint-disable-next-line
+    const res = await fetch(
       `https://dev.to/api/users/by_username?url=${this.$route.params.username}`
     )
-    const parsedResponse = await response.json()
-    // eslint-disable-next-line
-    this.user = parsedResponse
+
+    if (!res.ok) {
+      throw new Error(`User ${this.$route.params.username} not found`)
+    }
+    this.user = await res.json()
   },
   fetchOnServer: false,
   data() {

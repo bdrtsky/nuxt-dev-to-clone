@@ -8,7 +8,7 @@
       </content-placeholders>
     </template>
     <template v-else-if="$fetchState.error">
-      <p>Error while fetching posts: {{ error }}</p>
+      <p>Error while fetching posts: {{ $fetchState.error.message }}</p>
     </template>
     <template v-else>
       <header>
@@ -57,23 +57,15 @@ export default {
   },
   props: [],
   async fetch() {
-    const response = await fetch(
-      // eslint-disable-next-line
+    const article = await fetch(
       `https://dev.to/api/articles/${this.$route.params.article}`
-    )
-    const parsedResponse = await response.json()
-    if (
-      parsedResponse.id &&
-      // eslint-disable-next-line
-      parsedResponse.user.username === this.$route.params.username
-    ) {
-      // eslint-disable-next-line
-      this.article = parsedResponse
-      // eslint-disable-next-line
+    ).then((res) => res.json())
+
+    if (article.id && article.user.username === this.$route.params.username) {
+      this.article = article
       this.$store.commit('SET_CURRENT_ARTICLE', this.article)
     } else {
-      // eslint-disable-next-line
-      this.$nuxt.error({ statusCode: 404, message: 'Article not found' })
+      throw new Error('Article not found')
     }
   },
   data() {
