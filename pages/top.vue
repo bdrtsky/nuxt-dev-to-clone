@@ -14,7 +14,7 @@
       </div>
     </template>
     <template v-else-if="$fetchState.error">
-      <p>Error while fetching posts: {{ error }}</p>
+      <p>Error while fetching posts: {{ $fetchState.error.message }}</p>
     </template>
     <template v-else>
       <div class="article-cards-wrapper">
