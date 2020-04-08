@@ -34,10 +34,12 @@ export default {
     '~/plugins/vue-placeholders.js',
     '~/plugins/vue-observe-visibility.client.js'
   ],
-  buildModules: ['@nuxtjs/eslint-module'],
-  modules: [
+  buildModules: [
+    '@nuxtjs/eslint-module',
     '@nuxtjs/svg',
-    '@nuxtjs/style-resources',
+    '@nuxtjs/style-resources'
+  ],
+  modules: [
     [
       'nuxt-ackee',
       {
