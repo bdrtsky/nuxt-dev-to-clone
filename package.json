@@ -12,7 +12,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.12.2",
     "nuxt-ackee": "0.0.4",
     "vue-content-placeholders": "^0.2.1",
     "vue-observe-visibility": "^0.4.6"
@@ -25,7 +25,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-nuxt": "^0.5.2",
     "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1",
     "sass": "^1.26.3",

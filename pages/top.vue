@@ -53,13 +53,11 @@ export default {
     ArticleCardBlock
   },
   async fetch() {
-    const res = await fetch(
-      // eslint-disable-next-line
+    const articles = await fetch(
       `https://dev.to/api/articles?tag=nuxt&top=365&page=${this.currentPage}`
-    )
-    const parsedResponse = await res.json()
-    // eslint-disable-next-line
-    this.articles = [...this.articles, ...parsedResponse]
+    ).then((res) => res.json())
+
+    this.articles = this.articles.concat(articles)
   },
   data() {
     return {
