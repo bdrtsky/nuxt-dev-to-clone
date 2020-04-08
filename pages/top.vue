@@ -14,7 +14,7 @@
       </div>
     </template>
     <template v-else-if="$fetchState.error">
-      <p>Error while fetching posts: {{ $fetchState.error.message }}</p>
+      <inline-error-block :error="$fetchState.error" />
     </template>
     <template v-else>
       <div class="article-cards-wrapper">
@@ -47,10 +47,12 @@
 
 <script>
 import ArticleCardBlock from '@/components/blocks/ArticleCardBlock'
+import InlineErrorBlock from '@/components/blocks/InlineErrorBlock'
 
 export default {
   components: {
-    ArticleCardBlock
+    ArticleCardBlock,
+    InlineErrorBlock
   },
   async fetch() {
     const articles = await fetch(

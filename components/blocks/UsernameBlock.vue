@@ -18,7 +18,7 @@
       </div>
     </template>
     <template v-else-if="$fetchState.error">
-      <p>Error while fetching user: {{ $fetchState.error.message }}</p>
+      <inline-error-block :error="$fetchState.error" />
     </template>
     <template v-else>
       <div class="image-wrapper">
@@ -79,12 +79,14 @@
 import TwitterIcon from '~/assets/icons/twitter.svg?inline'
 import GithubIcon from '~/assets/icons/github.svg?inline'
 import ExternalLinkIcon from '~/assets/icons/external-link.svg?inline'
+import InlineErrorBlock from '@/components/blocks/InlineErrorBlock'
 
 export default {
   components: {
     TwitterIcon,
     GithubIcon,
-    ExternalLinkIcon
+    ExternalLinkIcon,
+    InlineErrorBlock
   },
   props: [],
   async fetch() {

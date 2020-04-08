@@ -13,7 +13,7 @@
       </div>
     </template>
     <template v-else-if="$fetchState.error">
-      <p>{{ $fetchState.error.message }}</p>
+      <inline-error-block :error="$fetchState.error" />
     </template>
     <template v-else>
       <nuxt-link
@@ -79,7 +79,12 @@
 </template>
 
 <script>
+import InlineErrorBlock from '@/components/blocks/InlineErrorBlock'
+
 export default {
+  components: {
+    InlineErrorBlock
+  },
   props: [],
   async fetch() {
     const res = await fetch(

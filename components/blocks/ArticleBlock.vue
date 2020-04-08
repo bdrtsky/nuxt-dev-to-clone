@@ -8,7 +8,7 @@
       </content-placeholders>
     </template>
     <template v-else-if="$fetchState.error">
-      <p>Error while fetching posts: {{ $fetchState.error.message }}</p>
+      <inline-error-block :error="$fetchState.error" />
     </template>
     <template v-else>
       <header>
@@ -48,11 +48,13 @@
 
 <script>
 import HeartIcon from '@/assets/icons/heart.svg?inline'
+import InlineErrorBlock from '@/components/blocks/InlineErrorBlock'
 import CommentsIcon from '@/assets/icons/comments.svg?inline'
 
 export default {
   components: {
     HeartIcon,
+    InlineErrorBlock,
     CommentsIcon
   },
   props: [],

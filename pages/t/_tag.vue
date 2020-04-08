@@ -14,7 +14,7 @@
       </div>
     </template>
     <template v-else-if="$fetchState.error">
-      <p>{{ $fetchState.error.message }}</p>
+      <inline-error-block :error="$fetchState.error" />
     </template>
     <template v-else>
       <div class="article-cards-wrapper">
@@ -47,6 +47,7 @@
 
 <script>
 import ArticleCardBlock from '@/components/blocks/ArticleCardBlock'
+import InlineErrorBlock from '@/components/blocks/InlineErrorBlock'
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1)
@@ -54,7 +55,8 @@ function capitalize(str) {
 
 export default {
   components: {
-    ArticleCardBlock
+    ArticleCardBlock,
+    InlineErrorBlock
   },
   async fetch() {
     const articles = await fetch(
