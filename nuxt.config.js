@@ -42,6 +42,6 @@ export default {
   modules: ['nuxt-ackee'],
   ackee: {
     server: 'https://ackee.nuxtjs.com',
-    domainId: '232cc68c-3066-4703-a1b7-4556135ec989'
+    domainId: '6336379b-8d3e-4069-9d2e-897be6a7ed4e'
   }
 }

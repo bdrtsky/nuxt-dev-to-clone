@@ -2,24 +2,23 @@
 
 > An articles aggregation app using [DEV.TO](https://dev.to) public [API](https://docs.dev.to/api/), demonstrating capabilities of [NuxtJS](https://nuxtjs.org) new [fetch()](https://nuxtjs.org/api/pages-fetch)
 
-See [live mode](https://boyps.sse.codesandbox.io).
+See [live mode](https://dev-clone.nuxtjs.app/).
 
 [![Edit dev-to-clone-nuxt](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/bdrtsky/nuxt-dev-to-clone/tree/master/?fontsize=14&hidenavigation=1&theme=dark)
 
 ## What You’ll Learn
 
-* use `$fetchState` for showing nice placeholders while data is fetching on the client side
+- use `$fetchState` for showing nice placeholders while data is fetching on the client side
 
-* use `keep-alive` and `activated` hook to efficiently cache API requests on pages that have already been visited
+- use `keep-alive` and `activated` hook to efficiently cache API requests on pages that have already been visited
 
-* reuse the `fetch` hook with `this.$fetch()`
+- reuse the `fetch` hook with `this.$fetch()`
 
-* set `fetchOnServer` value to control when we need to render our data on the server side or not
+- set `fetchOnServer` value to control when we need to render our data on the server side or not
 
-* find a way to handle errors from `fetch` hook.
+- find a way to handle errors from `fetch` hook.
 
 ## Getting Started
-
 
 ```sh
 # clone the project
