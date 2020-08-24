@@ -4,12 +4,8 @@
     <h2>{{ error.message }}</h2>
 
     <div class="error-navigation">
-      <a href="#" @click="$router.push(-1)">
-        Back
-      </a>
-      <nuxt-link to="/">
-        Main Page
-      </nuxt-link>
+      <a href="#" @click="$router.push(-1)"> Back </a>
+      <nuxt-link to="/"> Main Page </nuxt-link>
     </div>
   </div>
 </template>

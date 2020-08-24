@@ -76,10 +76,10 @@
 </template>
 
 <script>
+import InlineErrorBlock from '@/components/blocks/InlineErrorBlock'
 import TwitterIcon from '~/assets/icons/twitter.svg?inline'
 import GithubIcon from '~/assets/icons/github.svg?inline'
 import ExternalLinkIcon from '~/assets/icons/external-link.svg?inline'
-import InlineErrorBlock from '@/components/blocks/InlineErrorBlock'
 
 export default {
   components: {
